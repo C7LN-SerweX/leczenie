@@ -17,9 +17,10 @@
             background-position: center;
         }
 
-        h1, h2 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
+        h2 {
+            font-family: 'Poppins', serif;
+            font-weight: 750;
+            font-size: 20px;
             color: rgb(0, 0, 0);
         }
 
@@ -62,6 +63,12 @@
     height: auto;
     display: block;
 }
+      
+        h1 {
+            font-family: 'Poppins', seif;
+            font-size: 30px;
+            font-weight: 800;
+        }
 
     </style>
 </head>
@@ -71,24 +78,53 @@
         <button onclick="showSection('sekcja1')">
             <i class="fas fa-syringe"></i> Wyniki
         </button>
+        <button onclick="showSection('sekcja2')">
+            <i class="fas fa-medkit"></i> Leczonka
+        </button>
     </header>
+
+    <p>Więcej Już Niedługo.</p>
 
     <div id="sekcja1" class="sekcja">
         <h2>Badanie</h2>
         <img src="badanie.png" alt="Obrazek badania">
+        <span>Widzimy Teraz, Zdjęcie Serca Adama.<br>Na Tym Sercu, Widać Fioletowe Kropki, Prawda?</span>
+        <h2><a href="#" onclick="showSection('roz')">Są To Rozprzeszczeniacze Adamofobi I Adam Core.</a></h2>
     </div>
 
-    <script>
-function showSection(id) {
-    console.log('Funkcja showSection została wywołana z ID: ' + id);
-    const sekcje = document.querySelectorAll('.sekcja');
-    sekcje.forEach(div => div.style.display = 'none');
-    const aktywna = document.getElementById(id);
-    if (aktywna) {
-        aktywna.style.display = 'flex';
-    }
-}
+    <div id="roz" class="sekcja">
+        <h1>Rozprzeszczeniacze i Adam Core</h1>
+        <h2>Rozprzeszczeniacz Adamofobii</h2>
+        <p>Przenosi Dane Do Ust, Oczów, Rąk, Nóg I Wszystkich Części Ciała.<br>Wtedy Mogą One Cię Zarazić Adamofobią.</p>
+        <h2>Adam Core</h2>
+        <p>Przez To, Adamofobia Się Utrzymuje.<br>Wprowadza Dane Do DNA, Przez Które Praktycznie Nie Da Się Wyleczyć Z Adamofobii Adama.</p>
+    </div>
 
-    </script>
+    <div id="sekcja2" class="sekcja">
+        <h1>Najnowsze Leczenie Z Badań 070425</h1>
+        <h2>MASECZKA WATERRRRR</h2>
+        <p>Są Na To 2 Sposoby.<br>Albo Nakleić Naklejki Waterrra Na Maseczke,<br>Albo Polać Maseczke Waterrrem Od Dwóch Stron.<br>Jeśli Połączysz 2 Sposoby W Jedno, 50% Więcej Wydajności.</p>
+        <h1>DOSTĘPNE SMAKI WATERRRA DO LECZENIA</h1>
+        <h2>Brzoskwinia (Średnio-Duża Wydajność)</h2>
+        <h2>Malina (Średnia Wydajność)</h2>
+        <h2>Jabłko (Duża Wydajność)</h2>
+        <h2>Truskawka (Bardzo Duża Wydajność)</h2>
+        <h2>Cytryna (Średnia Wydajność)</h2>
+        <h2>Arbuz (Duża Wydajność)</h2>
+        <h2>Woda (bez dodatku owoców, Bardzo Duża Wydajność)</h2>
+
+    <script>
+
+        function showSection(id) {
+            console.log('Funkcja showSection została wywołana z ID: ' + id); // Sprawdzamy, czy funkcja jest wywoływana
+            const sekcje = document.querySelectorAll('.sekcja');
+            sekcje.forEach(div => div.style.display = 'none'); // Ukrywa wszystkie sekcje
+            const aktywna = document.getElementById(id); 
+            if (aktywna) {
+                aktywna.style.display = 'flex'; // Pokazuje wybraną sekcję
+            }
+        }
+</script>
+
 </body>
 </html>
