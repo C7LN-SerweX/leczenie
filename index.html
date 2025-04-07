@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wyniki Badań</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('tlo.png'); /* sprawdź czy istnieje */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        h1, h2 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: rgb(0, 0, 0);
+        }
+
+        span, p {
+            font-family: 'Poppins', serif;
+            font-weight: 700;
+        }
+
+        header {
+            background-color: rgba(0,0,0,0.5);
+            padding: 20px;
+        }
+
+        button {
+            font-size: 20px;
+            padding: 10px;
+            font-family: 'Playfair Display', serif;
+            background-color: coral;
+            color:blue
+        }
+
+        .sekcja {
+            display: none; /* domyślnie ukryte */
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 80vh;
+            text-align: center;
+        }
+
+        .sekcja img {
+            max-width: 90%;
+            height: auto;
+        }
+
+        .sekcja img {
+    border: 2px solid lime;
+    background-color: rgba(0, 255, 0, 0.2);
+    max-width: 90%;
+    height: auto;
+    display: block;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h2>Badania</h2>
+        <button onclick="showSection('sekcja1')">
+            <i class="fas fa-syringe"></i> Wyniki
+        </button>
+    </header>
+
+    <div id="sekcja1" class="sekcja">
+        <h2>Badanie</h2>
+        <img src="badanie.png" alt="Obrazek badania">
+    </div>
+
+    <script>
+function showSection(id) {
+    console.log('Funkcja showSection została wywołana z ID: ' + id);
+    const sekcje = document.querySelectorAll('.sekcja');
+    sekcje.forEach(div => div.style.display = 'none');
+    const aktywna = document.getElementById(id);
+    if (aktywna) {
+        aktywna.style.display = 'flex';
+    }
+}
+
+    </script>
+</body>
+</html>
